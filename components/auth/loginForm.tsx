@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-//import { login } from "@services/authentication.service";
 import {
   Form,
   FormControl,
@@ -14,8 +13,7 @@ import {
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useState } from "react";
-//import { toast } from "sonner";
-//import { GiCancel } from "react-icons/gi";
+
 import { useRouter } from "next/navigation";
 import { loginFormSchema, loginRequest } from "@/app/typings/authForms";
 import Link from "next/link";
@@ -68,7 +66,6 @@ export default function LoginForm() {
 
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        // className="space-y-8 bg-white px-8 py-12 rounded-lg shadow-md w-full md:w-1/2"
         className="space-y-8 bg-white px-8 py-6 rounded-lg shadow-md w-full border-2 rounded-[20px] border-primary"
       >
      <h1 className="text-black md:text-2xl text-lg">You have an account ? <span className="text-primary font-bold"> Sign In</span></h1>

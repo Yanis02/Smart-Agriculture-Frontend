@@ -2,11 +2,8 @@
 import getCowStats from '@/app/services/getCowStats';
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import Chart from "chart.js/auto";
-import { CategoryScale } from "chart.js";
-import { Line } from "react-chartjs-2";
 import StatsGraph from '@/components/farmer/statsGraph';
-function page() {
+function Page() {
   const {cowId}=useParams();
   const [temp,setTemp]=useState([])
   const [steps,setSteps]=useState([])
@@ -50,4 +47,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

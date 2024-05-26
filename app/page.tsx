@@ -30,7 +30,7 @@ export default function Home() {
         onCheckedChange={()=>setHasNotAcc(!hasNotAcc)}/>
         </div>
         {
-          !hasNotAcc ? <LoginForm/> : <RegisterForm/>
+          !hasNotAcc ? <LoginForm/> : <RegisterForm setHasNotAcc={setHasNotAcc} />
 
         }
             

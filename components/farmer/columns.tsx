@@ -61,7 +61,7 @@ const AdminCowsColumns = (): ColumnDef<Cow>[] => {
                 ()=>
                     router.push(`/admin/cows/${cow.cow_id}`)
             }>
-                View cow's activity
+                View cow activity
               </DropdownMenuItem>
               <DropdownMenuSeparator />
             </DropdownMenuContent>

@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-//import { register } from "@services/authentication.service";
 import {
   Form,
   FormControl,
@@ -11,13 +10,9 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-//import { MdDone } from "react-icons/md";
-//import { GiCancel } from "react-icons/gi";
-//import { errorAuthResponse, registerRequest } from "@typings/auth/authForms";
+
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-//import { toast } from "sonner";
-import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { registerFormSchema, registerRequest } from "@/app/typings/authForms";
@@ -26,7 +21,7 @@ import { toast } from "sonner";
 
 const formSchema = registerFormSchema;
 
-export default function RegisterForm() {
+export default function RegisterForm(props:any) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
 
@@ -44,8 +39,8 @@ export default function RegisterForm() {
 
   async function onSubmit(values: registerRequest) {
     setIsLoading(true);
-    delete values.confirmPassword;
-     const result= await register(values) ;
+    const { confirmPassword, ...restValues } = values;
+         const result= await register(values) ;
      if (result.status==="success") {
         toast.success("Message", {
             description: "Logged In",
@@ -54,7 +49,7 @@ export default function RegisterForm() {
               onClick: () => null,
             },
           });
-          router.push("/")
+          props.setHasNotAcc(false)
     }else {
         alert(result.message)
 
