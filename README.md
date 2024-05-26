@@ -1,4 +1,4 @@
-This is the web client part of our architechture in our project that is called "smart agriculture" .
+This is the web client part of our architechture in our project called "smart agriculture" .
 It is a farmer dashboard where he can manage his cows and visualize the data sent from each bracelet to the central server and even receive alerts about his cows health.
 
 
