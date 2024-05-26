@@ -3,6 +3,7 @@
 import { cookies } from "next/headers";
 import { revalidateTag } from "next/cache";
 import { errorAuthResponse, loginRequest, registerRequest, successLoginResponse, successRegisterResponse } from "../typings/authForms";
+import BASE_URL from "@/config/endpoints";
 
 async function login(
   formData: loginRequest
@@ -10,7 +11,7 @@ async function login(
   try {
     const formdatajson = JSON.stringify(formData);
     const response = await fetch(
-      `http://127.0.0.1:8000/api/login/`,
+      `${BASE_URL}/api/login/`,
       {
         method: "POST",
         body: formdatajson,
@@ -49,7 +50,7 @@ async function register(
 
   try {
     const response = await fetch(
-      `http://127.0.0.1:8000/api/signup/`,
+      `${BASE_URL}/api/signup/`,
       {
         method: "POST",
         body: formdatajson,

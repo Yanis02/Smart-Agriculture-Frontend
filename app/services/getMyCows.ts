@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { errorAuthResponse, successLoginResponse } from "../typings/authForms";
 import { Cow } from "../typings/myfarm";
+import BASE_URL from "@/config/endpoints";
 
 
 async function getCows(
@@ -8,7 +9,7 @@ async function getCows(
     const token = `Bearer ${cookies().get("user")?.value}`
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/cows/`,
+        `${BASE_URL}/api/cows/`,
         {
           method: "GET",
           headers: {

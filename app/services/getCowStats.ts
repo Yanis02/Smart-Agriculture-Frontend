@@ -1,6 +1,7 @@
 "use server"
 import { cookies } from "next/headers";
 import { errorAuthResponse, successLoginResponse } from "../typings/authForms";
+import BASE_URL from "@/config/endpoints";
 
 
 async function getCowStats(
@@ -9,7 +10,7 @@ async function getCowStats(
     const token = `Bearer ${cookies().get("user")?.value}`
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/sensor-data/${cowId}`,
+        `${BASE_URL}/sensor-data/${cowId}`,
         {
           method: "GET",
           headers: {
