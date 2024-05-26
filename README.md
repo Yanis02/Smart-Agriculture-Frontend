@@ -1,5 +1,5 @@
-This is the web client part of our architechture in our project called "smart agriculture" .
-It is a farmer dashboard where he can manage his cows and visualize the data sent from each bracelet to the central server and even receive alerts about his cows health.
+This is the web client part of our architechture in our project  "smart agriculture" .
+It is a farmer dashboard where he can manage his cows,visualize the data sent from each bracelet to the central server (passing by the proxy server) and even receive alerts about his cows health in case of critical health situations.
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
